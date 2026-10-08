@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#eef1f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0d14" media="(prefers-color-scheme: dark)">
+  <title>로또 번호 추천</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <main>
+    <header>
+      <h1>로또 번호 추천</h1>
+      <p id="meta" class="sub">당첨 데이터를 불러오는 중…</p>
+    </header>
+
+    <section class="glass controls">
+      <div class="row">
+        <span class="label">방식</span>
+        <div class="segment" data-name="mode">
+          <button type="button" data-value="hot" aria-pressed="true">많이 나온 번호</button>
+          <button type="button" data-value="cold" aria-pressed="false">적게 나온 번호</button>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">기간</span>
+        <div class="segment" data-name="range">
+          <button type="button" data-value="0" aria-pressed="true">전체</button>
+          <button type="button" data-value="100" aria-pressed="false">100회</button>
+          <button type="button" data-value="50" aria-pressed="false">50회</button>
+          <button type="button" data-value="20" aria-pressed="false">20회</button>
+        </div>
+      </div>
+      <div class="row">
+        <span class="label">게임 수</span>
+        <div class="segment" data-name="games">
+          <button type="button" data-value="1" aria-pressed="false">1</button>
+          <button type="button" data-value="3" aria-pressed="false">3</button>
+          <button type="button" data-value="5" aria-pressed="true">5</button>
+        </div>
+      </div>
+      <button id="generate" class="primary" type="button" disabled>번호 추천받기</button>
+    </section>
+
+    <section id="results" class="results" aria-live="polite"></section>
+
+    <p class="note">과거 출현 빈도로 가중치를 줄 뿐, 당첨 확률은 무작위 선택과 같습니다.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
